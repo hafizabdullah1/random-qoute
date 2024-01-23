@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Qoute Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(./img/pexels-gerd-altmann-21696.jpg);
+            background-size: 100% 100%;
+            backdrop-filter: blur(5px);
+        }
+
+        .main {
+            border: 1px solid lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px;
+            background: #3b83f671;
+            padding: 10px 20px;
+        }
+
+        button {
+            height: 7vh;
+            width: 150px;
+            border: none;
+            border-radius: 8px;
+            background: #3bf6b8;
+            /* color: white; */
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transition: .3s;
+        }
+
+        button:active {
+            padding-top: 6px;
+        }
+
+        p {
+            display: none;
+            color: white;
+            font-style: italic;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Random Quote Generator</h1>
+        <p></p>
+        <button onclick="handle()">Generate Quote</button>
+    </div>
+</body>
+<script>
+    let arr =
+        [
+            {
+                line: 'he only way to do great work is to love what you do. \n - Steve Jobs'
+            },
+            {
+                line: 'Success is walking from failure to failure with no loss of enthusiasm. - Winston Churchill'
+            },
+            {
+                line: "Your time is limited, don't waste it living someone else's life. - Steve Jobs"
+            },
+            {
+                line: "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort"
+            },
+            {
+                line: "Innovation distinguishes between a leader and a follower. - Steve Jobs"
+            },
+            {
+                line: "The harder you work for something, the greater you'll feel when you achieve it. - Anonymous"
+            },
+            {
+                line: "The best revenge is massive success. - Frank Sinatra"
+            },
+            {
+                line: "I find that the harder I work, the more luck I seem to have. - Thomas Jefferson"
+            },
+            {
+                line: "The biggest risk is not taking any risk. In a world that's changing quickly, the only strategy that is guaranteed to fail is not taking risks. - Mark Zuckerberg"
+            },
+            {
+                line: "Success is not in what you have, but who you are. - Bo Bennett"
+            }
+        ]
+
+    let print = document.querySelector('p');
+
+    let handle = () => {
+        print.style.display="block"
+        let check = parseInt(Math.random() * 10)
+        console.log(check);
+
+        print.innerText = `${arr[check].line}`
+
+        // arr.map((e, i) => {
+        // })
+    }
+</script>
+
+</html>
